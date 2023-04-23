@@ -55,17 +55,12 @@ namespace HumanResourcesApplication
             dtpEmploymentData.Value = _worker.DateOfEmployment;
             rtbComments.Text = _worker.Comments;
             tbDismissalData.Text = _worker.DismissalDate.ToString();
-            tbSalary.Text = _worker.Salary.ToString();
+            nudSalary.Value = _worker.Salary;
             tbDepartment.Text = _departments.FirstOrDefault(x => x.Id == _worker.DepartmentId).Name;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (!Int32.TryParse(tbSalary.Text, out var salary))
-            {
-                MessageBox.Show("Niepoprawne wartosc pensji");
-                return;
-            }
 
             if (!_departments.Any(x => x.Name == tbDepartment.Text))
             {
@@ -110,7 +105,7 @@ namespace HumanResourcesApplication
                 LastName = tbLastName.Text,
                 DateOfEmployment = dtpEmploymentData.Value.Date,
                 Comments = rtbComments.Text,
-                Salary = Int32.Parse(tbSalary.Text),
+                Salary = nudSalary.Value,
                 DepartmentId = _departments.First(x =>x.Name== tbDepartment.Text).Id,
             };
             workers.Add(worker);

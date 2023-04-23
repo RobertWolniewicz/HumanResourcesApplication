@@ -26,8 +26,11 @@ namespace HumanResourcesApplication
         {
             InitializeComponent();
             InitEmpoymentStatusComboBox();
-            InitDepartmentComboBox();
+            RefreshApp();
             SetColumnsHeader();
+
+            cmbDepartment.SelectedIndexChanged += cmbDepartment_SelectedIndexChanged;
+            cmbEmploymentStatus.SelectedIndexChanged += cmbEmploymentStatus_SelectedIndexChanged;
 
             if (IsMaximize)
             {
@@ -35,10 +38,13 @@ namespace HumanResourcesApplication
             }
         }
 
-        void InitDepartmentComboBox()
+        void RefreshDepartmentComboBox()
         {
+            cmbDepartment.DataSource = null;
+            cmbDepartment.DataSource = _departments;
             cmbDepartment.DisplayMember = "Name";
             cmbDepartment.ValueMember = "Id";
+            cmbDepartment.SelectedIndex = 0;
         }
 
         void RefreshApp()
@@ -58,8 +64,9 @@ namespace HumanResourcesApplication
             }
 
             RefreshDepartmentsList();
+            RefreshDepartmentComboBox();
 
-            var selectedDepartmentId = ((Department)cmbDepartment.SelectedItem).Id;
+            int? selectedDepartmentId = ((Department)cmbDepartment.SelectedItem).Id;
             if (selectedDepartmentId != 0)
                 workers = workers.Where(x => x.DepartmentId == selectedDepartmentId).ToList();
 
@@ -103,8 +110,6 @@ namespace HumanResourcesApplication
                 Name = "Wszystkie"
             });
             _departments.AddRange(_departmentFileHelper.DeserializeFromFile());
-            cmbDepartment.DataSource = _departments;
-            cmbDepartment.Refresh();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

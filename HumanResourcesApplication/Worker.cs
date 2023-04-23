@@ -14,7 +14,7 @@ namespace HumanResourcesApplication
         public string Comments { get; set; }
         public DateTime DateOfEmployment { get; set; }
         public DateTime? DismissalDate { get; set; }
-        public double? Salary { get; set; }
+        public decimal Salary { get; set; }
         public int DepartmentId { get; set; }
 
     }

@@ -96,7 +96,6 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(128, 23);
             this.cmbDepartment.TabIndex = 5;
-            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // lbEmploymentStatus
             // 
@@ -123,7 +122,6 @@
             this.cmbEmploymentStatus.Name = "cmbEmploymentStatus";
             this.cmbEmploymentStatus.Size = new System.Drawing.Size(121, 23);
             this.cmbEmploymentStatus.TabIndex = 7;
-            this.cmbEmploymentStatus.SelectedIndexChanged += new System.EventHandler(this.cmbEmploymentStatus_SelectedIndexChanged);
             // 
             // Main
             // 

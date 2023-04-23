@@ -41,11 +41,12 @@
             this.lbEmploymentData = new System.Windows.Forms.Label();
             this.tbDismissalData = new System.Windows.Forms.TextBox();
             this.lbDismissalDate = new System.Windows.Forms.Label();
-            this.tbSalary = new System.Windows.Forms.TextBox();
             this.lbSalary = new System.Windows.Forms.Label();
             this.lbDepartment = new System.Windows.Forms.Label();
             this.dtpEmploymentData = new System.Windows.Forms.DateTimePicker();
             this.tbDepartment = new System.Windows.Forms.TextBox();
+            this.nudSalary = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSalary)).BeginInit();
             this.SuspendLayout();
             // 
             // lbId
@@ -160,13 +161,6 @@
             this.lbDismissalDate.TabIndex = 22;
             this.lbDismissalDate.Text = "Data zwolnienia";
             // 
-            // tbSalary
-            // 
-            this.tbSalary.Location = new System.Drawing.Point(117, 157);
-            this.tbSalary.Name = "tbSalary";
-            this.tbSalary.Size = new System.Drawing.Size(200, 23);
-            this.tbSalary.TabIndex = 25;
-            // 
             // lbSalary
             // 
             this.lbSalary.AutoSize = true;
@@ -199,15 +193,22 @@
             this.tbDepartment.Size = new System.Drawing.Size(200, 23);
             this.tbDepartment.TabIndex = 29;
             // 
+            // nudSalary
+            // 
+            this.nudSalary.Location = new System.Drawing.Point(117, 157);
+            this.nudSalary.Name = "nudSalary";
+            this.nudSalary.Size = new System.Drawing.Size(200, 23);
+            this.nudSalary.TabIndex = 30;
+            // 
             // AddEditWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 381);
+            this.Controls.Add(this.nudSalary);
             this.Controls.Add(this.tbDepartment);
             this.Controls.Add(this.dtpEmploymentData);
             this.Controls.Add(this.lbDepartment);
-            this.Controls.Add(this.tbSalary);
             this.Controls.Add(this.lbSalary);
             this.Controls.Add(this.tbDismissalData);
             this.Controls.Add(this.lbDismissalDate);
@@ -227,6 +228,7 @@
             this.Name = "AddEditWorker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodawanie pracownika";
+            ((System.ComponentModel.ISupportInitialize)(this.nudSalary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,10 +249,10 @@
         private Label lbEmploymentData;
         private TextBox tbDismissalData;
         private Label lbDismissalDate;
-        private TextBox tbSalary;
         private Label lbSalary;
         private Label lbDepartment;
         private DateTimePicker dtpEmploymentData;
         private TextBox tbDepartment;
+        private NumericUpDown nudSalary;
     }
 }
